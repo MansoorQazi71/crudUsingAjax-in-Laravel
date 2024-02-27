@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studetController;
@@ -19,3 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/getData',[studetController::class, 'getData'])->name('getData');
+Route::get('/apidemo',[ApiController::class,'apidemoo']);
+Route::post('/store',[ApiController::class,'store']);
+Route::get('/show/{id}',[ApiController::class,'show']);
+Route::put('/update/{id}',[ApiController::class,'update']);
+Route::delete('/del/{id}',[ApiController::class,'del']);
